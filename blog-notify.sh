@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#Auth.txt contains space separated uname and passwd - "uname passwd"
 file="auth.txt"
 
 rsslink="http://placements.iitb.ac.in/blog/?feed=rss2"
@@ -18,13 +19,14 @@ differ=false
 #Logic here
 cmp --silent new.html old.html || differ=true
 
-echo $differ
+#echo $differ
 if [ $differ == true ]
 then
-    zenity --question --text="There is something new on the blog" --ok-label="Finally! Open the Blog" --cancel-label="Meh"
-if [ $? == 0 ] ; then
-    google-chrome $bloglink
+    zenity --question --display=:0.0 --timeout 240 --text="There is something new on the blog" --ok-label="Finally! Open the Blog" --cancel-label="Meh"
+    if [ $? == 0 ] ; then
+	mv new.html old.html
+	google-chrome $bloglink
+    else
+	rm new.html
+    fi
 fi
-fi
-
-mv new.html old.html
