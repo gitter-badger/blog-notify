@@ -1,6 +1,8 @@
 blog-notify
 ===========
 
+[![Join the chat at https://gitter.im/meetshah1995/blog-notify](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/meetshah1995/blog-notify?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 RSS notifications for Ubuntu (unfinished)
 
 Uses Zenity for Ubuntu to display a dialog whenever there is a new post on a specified blog (using RSS feed). 
